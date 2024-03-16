@@ -1,7 +1,4 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <h1>hello</h1>
-  );
+import { redirect } from "next/navigation";
+export default function RootPage() {
+  redirect("/en");
 }
