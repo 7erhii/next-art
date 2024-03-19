@@ -1,5 +1,40 @@
 {
+  "Header": {
+    "title1": "Design",
+    "title2": "Development",
+    "title3": "Marketing",
+    "title4": "Ready-made Solutions ",
+    "title5": "More",
+
+    "subtitle1-1": "UX/UI Design",
+    "subtitle1-2": "UX/UI Design",
+    "subtitle1-3": "UX/UI Design",
+
+    "subtitle2-1": "Back-End",
+    "subtitle2-2": "Front-End",
+    "subtitle2-3": "Full Stack",
+
+    "subtitle3-1": "Product branding",
+    "subtitle3-2": "SEO Advertising",
+    "subtitle4-3": "Full Stack",
+
+    "subtitle4-1": "IP telephony implementation & administration",
+    "subtitle4-2": "Implementation of security systems",
+    "subtitle4-3": "Implementation of a CRM system",
+    "subtitle4-4": "Integration of systems using API",
+    "subtitle4-5": "Chat bot implementations",
+    "subtitle4-6": "Ready Billing system",
+    "subtitle4-7": "IPTV/OTT",
+
+    "subtitle5-1": "Service",
+    "subtitle5-2": "Service",
+    "subtitle5-3": "Service"
+  },
   "Index": {
     "title": "Hello World"
+  },
+  "Footer": {
+    "title": "1234",
+    "subtitle": "fasdf"
   }
 }

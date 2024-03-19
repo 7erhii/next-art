@@ -1,7 +1,14 @@
 "use client";
 
-import React, { ChangeEvent, startTransition, useTransition } from "react";
+import React, {
+  ChangeEvent,
+  startTransition,
+  useState,
+  useEffect,
+  useTransition,
+} from "react";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 import {
   Select,
@@ -10,69 +17,46 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
+
 import { headerStyes } from "@/styles/style-header";
 import Image from "next/image";
 
 import mainLogo from "@/assets/images/main-logo.svg";
 import { useLocale } from "use-intl";
 
+import Nav from "./Nav";
+
 const Header = () => {
-
-//   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+  const [locale, setLocale] = useState("EN");
 
-  const localActive = useLocale();
+  useEffect(() => {
+    const nextLocale = Cookies.get("NEXT_LOCALE") || "en";
+    setLocale(nextLocale.toUpperCase());
+  }, []);
 
   const changeLanguage = (value: string) => {
     const nextLocale = value;
 
     router.replace(`/${nextLocale}`);
-    // startTransition(() => {
-    // });
   };
 
-  // const changeLanguage = (e) => {
-  //     const newLocale = e.target.value;
-  //     router.push(router.asPath, router.asPath, { locale: newLocale})
-  // }
   return (
     <header className={headerStyes.container}>
-      <h1>hello</h1>
       <a href="/" className="header__logo">
         <Image src={mainLogo} alt="Main Logo" />
       </a>
 
-      <nav className="header__menu">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>Link</NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </nav>
+      <Nav></Nav>
 
-      <div className="header__actions">
-        <button className="main-btn main-btn--sm main-btn--black ">
+      <div className="header__actions flex gap-2">
+        <button className="main-btn main-btn--sm main-btn--black bg-mainBlack text-white p-0.9 px-3 rounded-full	">
           <span>Contact us</span>
         </button>
         <div className="language-menu">
           <Select onValueChange={changeLanguage}>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder={"EN"} />
+              <SelectValue placeholder={locale} />{" "}
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="en">EN</SelectItem>

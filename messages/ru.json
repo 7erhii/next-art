@@ -1,5 +1,41 @@
 {
+  "Header": {
+    "title1": "Дизайн",
+    "title2": "Разработка",
+    "title3": "Маркетинг",
+    "title4": "Готовые решения",
+    "title5": "Ещё",
+  
+    "subtitle1-1": "UX/UI дизайн",
+    "subtitle1-2": "UX/UI дизайн",
+    "subtitle1-3": "UX/UI дизайн",
+  
+    "subtitle2-1": "Back-End",
+    "subtitle2-2": "Front-End",
+    "subtitle2-3": "Full Stack",
+  
+    "subtitle3-1": "Брендинг продукта",
+    "subtitle3-2": "SEO реклама",
+    "subtitle3-3": "Полный стек",
+  
+    "subtitle4-1": "Внедрение и администрирование IP телефонии",
+    "subtitle4-2": "Внедрение систем безопасности",
+    "subtitle4-3": "Внедрение CRM системы",
+    "subtitle4-4": "Интеграция систем с использованием API",
+    "subtitle4-5": "Внедрение чат-ботов",
+    "subtitle4-6": "Готовая система биллинга",
+    "subtitle4-7": "IPTV/OTT",
+  
+    "subtitle5-1": "Сервис",
+    "subtitle5-2": "Сервис",
+    "subtitle5-3": "Сервис"
+  },
+  
   "Index": {
-    "title": "Привет пися"
+    "title": "Привет "
+  },
+  "Footer": {
+    "title": "1234!!!",
+    "subtitle": "фываф"
   }
 }
