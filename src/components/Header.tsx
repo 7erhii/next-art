@@ -50,12 +50,12 @@ const Header = () => {
       <Nav></Nav>
 
       <div className="header__actions flex gap-2">
-        <button className="main-btn main-btn--sm main-btn--black bg-mainBlack text-white p-0.9 px-3 rounded-full	">
+        <button className="main-btn main-btn--sm main-btn--black bg-mainBlack text-white px-5 py-2 px-3 rounded-full	">
           <span>Contact us</span>
         </button>
         <div className="language-menu">
           <Select onValueChange={changeLanguage}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="">
               <SelectValue placeholder={locale} />{" "}
             </SelectTrigger>
             <SelectContent>

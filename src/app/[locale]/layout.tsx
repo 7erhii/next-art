@@ -7,6 +7,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero-section";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,8 @@ export default function RootLayout({ children, params: { locale } }: Readonly<Ro
         <body className={inter.className}>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <div className="flex-grow mt-20">{children}</div>
+            {/* <div className="flex-grow mt-20">{children}</div> */}
+            <Hero></Hero>
             <Footer />
           </div>
         </body>
