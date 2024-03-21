@@ -1,7 +1,5 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { IntlProvider } from 'next-intl';
+// import React, { useEffect, useState } from "react";
+// import { IntlProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -18,33 +16,30 @@ interface RootLayoutProps {
   };
 }
 
-export default function RootLayout({ children, params: { locale } }: Readonly<RootLayoutProps>) {
-  const [messages, setMessages] = useState({});
-  useEffect(() => {
-    async function loadMessages() {
-      try {
-        const importedMessages = await import(`/messages/${locale.toLowerCase()}.json`);
-        setMessages(importedMessages.default);
-      } catch (error) {
-        console.error(`Could not load messages for locale ${locale}`, error);
-        setMessages({});
-      }
-    }
-    loadMessages();
-  }, [locale]);
+const locales = ["en", "de"];
+
+import { unstable_setRequestLocale } from "next-intl/server";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  unstable_setRequestLocale(locale);
 
   return (
-    <IntlProvider locale={locale} messages={messages}>
       <html lang={locale}>
-        <body className={inter.className}>
+        <body className={"main"}>
           <div className="flex flex-col min-h-screen">
             <Header />
-            {/* <div className="flex-grow mt-20">{children}</div> */}
+            <div className="flex-grow mt-20">{children}</div>
             <Hero></Hero>
             <Footer />
           </div>
         </body>
       </html>
-    </IntlProvider>
   );
 }

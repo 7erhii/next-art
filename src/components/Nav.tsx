@@ -1,10 +1,13 @@
-import React from "react";
-import { useTranslations } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 import { GridIcon } from "@radix-ui/react-icons";
 
-const Nav = () => {
-  const t = useTranslations("Header");
+const Nav = async () => {
+  const { Header } = await getMessages();
+
+  const t = (key: string) => {
+    return Header[key];
+  };
 
   return (
     <nav className="header__menu">
@@ -90,7 +93,6 @@ const Nav = () => {
             </div>
           </div>
         </li>
-
       </ul>
     </nav>
   );
